@@ -23,11 +23,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             Hi, I'm{' '}
-            <span className="text-gray-700">{name}</span>
+            <span className="bg-gradient-to-tr from-gray-700 via-gray-500 to-gray-700 bg-clip-text text-transparent">{name}</span>
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-8"
+            className="text-xl sm:text-2xl md:text-3xl  mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
