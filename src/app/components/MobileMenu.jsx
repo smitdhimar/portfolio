@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ArrowRightFromLine } from 'lucide-react';
 
 const menuVariants = {
   hidden: { opacity: 0, x: '100%' },
@@ -58,7 +59,7 @@ export default function MobileMenu({ navLinks, onClose }) {
         exit="exit"
         className="fixed top-0 right-0 bottom-0 w-64 bg-white shadow-2xl z-50 md:hidden"
       >
-        <div className="flex flex-col h-full p-6 pt-20">
+        <div className="flex justify-between flex-col h-full p-6 pt-20">
           <nav className="flex flex-col gap-6">
             {navLinks.map((link, i) => (
               <motion.a
@@ -87,6 +88,12 @@ export default function MobileMenu({ navLinks, onClose }) {
               Download Resume
             </motion.a>
           </nav>
+          <div className="h-12 flex items-center">
+            <div className="h-10 w-10 rounded-3xl flex items-center justify-between bg-gray-900" onClick={onClose}>
+
+          <ArrowRightFromLine className='ml-2' color='#ffffff' strokeWidth={3} />
+            </div>
+          </div>
         </div>
       </motion.div>
     </>
