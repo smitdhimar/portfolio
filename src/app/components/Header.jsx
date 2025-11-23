@@ -5,6 +5,7 @@ import { HardDriveDownload, Menu, X } from "lucide-react";
 import { Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
+import { Braces } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -39,11 +40,14 @@ export default function Header() {
           <div className="flex justify-between items-center h-16 md:h-20">
             <motion.a
               href="#home"
-              className="text-xl md:text-2xl font-bold text-gray-900"
+              className="flex justify-between text-xl md:text-2xl font-bold text-gray-900"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Portfolio
+              <Braces strokeWidth={3} className="mr-2 mt-1"/>
+              <div className="flex items-center">
+                 Portfolio
+                </div>
             </motion.a>
 
             {/* Desktop Navigation */}
