@@ -55,7 +55,7 @@ export default function Projects() {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-300 flex flex-col"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {project.title}
@@ -69,7 +69,7 @@ export default function Projects() {
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-xs font-medium"
+                    className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold"
                   >
                     {tech}
                   </span>
@@ -86,7 +86,7 @@ export default function Projects() {
                   <Github size={18} />
                   Code
                 </a>
-                <a
+                {project?.demo ? <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -94,7 +94,7 @@ export default function Projects() {
                 >
                   <ExternalLink size={18} />
                   Demo
-                </a>
+                </a> :<></> }
               </div>
             </motion.div>
           ))}
