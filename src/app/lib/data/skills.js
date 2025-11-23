@@ -7,9 +7,7 @@ export const skills = [
       "TypeScript",
       "JavaScript",
       "Tailwind CSS",
-      "HTML/CSS",
-      "Redux",
-      "Framer Motion"
+      "HTML/CSS"
     ]
   },
   {
@@ -18,11 +16,19 @@ export const skills = [
       "Node.js",
       "Express",
       "Python",
-      "Django",
       "REST APIs",
-      "GraphQL",
-      "PostgreSQL",
       "MongoDB"
+    ]
+  },
+  {
+    category: "Cloud Services",
+    items: [
+      "AWS",
+      "Terraform",
+      "Lambda",
+      "S3 buckets",
+      "Dynamo DB",
+      "Cloudfront"
     ]
   },
   {
@@ -30,12 +36,7 @@ export const skills = [
     items: [
       "Git",
       "GitHub",
-      "Docker",
-      "AWS",
-      "Vercel",
-      "Figma",
-      "Jest",
-      "CI/CD"
+      "Docker",  
     ]
-  }
+  }, 
 ];
