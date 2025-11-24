@@ -2,19 +2,19 @@
 
 import { motion } from 'framer-motion';
 import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { contactDetails } from '../../../config';
 
-const socialMediaUsername = process.env.NEXT_PUBLIC_SOCIAL_MEDIA_USERNAME
-const emailId = process.env.NEXT_PUBLIC_EMAIL_ID
+
 
 const socialLinks = [
   {
     name: 'GitHub',
-    href: `https://github.com/${socialMediaUsername}`,
+    href: `https://github.com/${contactDetails?.socialMediaUsername}`,
     icon: Github,
   },
   {
     name: 'LinkedIn',
-    href: `https://linkedin.com/in/${socialMediaUsername}`,
+    href: `https://linkedin.com/in/${contactDetails?.socialMediaUsername}`,
     icon: Linkedin,
   },
   // {
@@ -51,7 +51,7 @@ export default function Contact() {
             className="mb-12"
           >
             <a
-              href={`mailto:${emailId}`}
+              href={`mailto:${contactDetails?.emailId}`}
               className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-lg"
             >
               <Mail size={24} />

@@ -6,6 +6,7 @@ import { Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
 import { Braces } from "lucide-react";
+import { userDetails } from "../../../config";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -46,7 +47,7 @@ export default function Header() {
             >
               <Braces strokeWidth={3} className="mr-2 mt-1"/>
               <div className="flex items-center">
-                 Portfolio
+                 {userDetails?.siteTitle}
                 </div>
             </motion.a>
 

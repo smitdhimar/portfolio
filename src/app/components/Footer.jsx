@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-const name = process.env.NEXT_PUBLIC_NAME
+import { userDetails } from '../../../config';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -16,7 +17,7 @@ export default function Footer() {
           className="flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-gray-600 text-sm text-center md:text-left">
-            © {currentYear} {name}. All rights reserved.
+            © {currentYear} {userDetails?.name}. All rights reserved.
           </p>
 
           <div className="flex gap-6">

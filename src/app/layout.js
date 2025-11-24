@@ -1,10 +1,10 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { userDetails } from '../../config';
 
 const inter = Inter({ subsets: ['latin'] });
-const name = process.env.NEXT_PUBLIC_NAME;
 export const metadata = {
-  title: `Portfolio | ${name}`,
+  title: `Portfolio | ${userDetails?.name}`,
   description: 'Full-stack developer portfolio showcasing projects and skills',
 };
 

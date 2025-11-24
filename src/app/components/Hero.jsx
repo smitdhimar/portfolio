@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-const name = process.env.NEXT_PUBLIC_NAME
+import { userDetails } from '../../../config';
 
 export default function Hero() {
   return (
@@ -23,7 +23,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             Hi, I'm{' '}
-            <span className="bg-gradient-to-tr from-gray-700 via-gray-500 to-gray-700 bg-clip-text text-transparent">{name}</span>
+            <span className="bg-gradient-to-tr from-gray-700 via-gray-500 to-gray-700 bg-clip-text text-transparent">{userDetails?.name}</span>
           </motion.h1>
 
           <motion.p
