@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { HardDriveDownload, Menu, X } from "lucide-react";
 import { Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
+import Toast from "../utils/Toast"
 import { Braces } from "lucide-react";
 import { userDetails } from "../../../config";
 
@@ -16,8 +17,23 @@ const navLinks = [
 ];
 
 export default function Header() {
+
+  const [showToast, setShowToast] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(()=>{
+
+    console.log('showToast', showToast)
+  }, [showToast])
+
+  const handleDownload = useCallback(()=>{
+
+    setShowToast(()=> true);
+    setTimeout(()=> setShowToast(false), 3000)
+
+    // debugger
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,10 +61,8 @@ export default function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Braces strokeWidth={3} className="mr-2 mt-1"/>
-              <div className="flex items-center">
-                 {userDetails?.siteTitle}
-                </div>
+              <Braces strokeWidth={3} className="mr-2 mt-1" />
+              <div className="flex items-center">{userDetails?.siteTitle}</div>
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -64,13 +78,16 @@ export default function Header() {
               ))}
               <a
                 href="/resume.pdf"
+                onClick={handleDownload}
                 download
                 className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
               >
                 <div>Resume</div>
-                <Download size={20}/>
-                {/* <HardDriveDownload/> */}
+                <Download size={16} strokeWidth={3} />
               </a>
+              {showToast && (
+                <Toast message={"Download Started!"}/>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
