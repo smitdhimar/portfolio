@@ -20,19 +20,20 @@ const socialLinks = [
 ];
 
 export default function Contact() {
-  const [ emailIdButtonText, setEmailIdButtonText] = useState(contactDetails?.emailId);
+  const [emailIdButtonText, setEmailIdButtonText] = useState(
+    contactDetails?.emailId
+  );
 
-   const handleCopy = async () => {
-        try {
-          await navigator.clipboard.writeText(emailIdButtonText);
-          
-          setEmailIdButtonText(()=>"Copied !")
-          setTimeout(() => setEmailIdButtonText(contactDetails?.emailId), 2000); // Reset "Copied!" state after 2 seconds
-        } catch (err) {
-          console.error('Failed to copy text: ', err);
-        }
-      };
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(emailIdButtonText);
 
+      setEmailIdButtonText(() => "Copied !");
+      setTimeout(() => setEmailIdButtonText(contactDetails?.emailId), 2000); // Reset "Copied!" state after 2 seconds
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -59,23 +60,20 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-12 flex flex-row gap-5 justify-center items-center"
           >
-            <Link
-              href={`mailto:${contactDetails?.emailId}`}
+            <a
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contactDetails?.emailId}&su=Let's connect&body=Hi, Smit dhimar `}
               target="_blank"
-              prefetch={false}
-              onClick={() => {
-                console.log(`mailto:${contactDetails?.emailId}`);
-              }}
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-lg"
             >
               <Mail size={24} />
               Send me an email
-            </Link>
+            </a>
+
             <div className="text-5xl"> | </div>
-            <div 
-            onClick={handleCopy}
-            className="cursor-pointer gap-3 px-8 py-4 border-2 border-gray-900 hover:bg-gray-100 rounded-lg text-lg font-medium">
+            <div
+              onClick={handleCopy}
+              className="cursor-pointer gap-3 px-8 py-4 border-2 border-gray-900 hover:bg-gray-100 rounded-lg text-lg font-medium"
+            >
               {emailIdButtonText}
             </div>
           </motion.div>
