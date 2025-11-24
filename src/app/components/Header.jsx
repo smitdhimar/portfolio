@@ -22,11 +22,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(()=>{
-
-    console.log('showToast', showToast)
-  }, [showToast])
-
   const handleDownload = useCallback(()=>{
 
     setShowToast(()=> true);
