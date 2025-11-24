@@ -55,7 +55,7 @@ export default function Projects() {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-300 flex flex-col"
+              className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-300 flex flex-col"
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {project.title}
@@ -65,7 +65,7 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex  flex-wrap gap-2 mb-6">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}

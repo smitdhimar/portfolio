@@ -16,12 +16,7 @@ const socialLinks = [
     name: 'LinkedIn',
     href: `https://linkedin.com/in/${contactDetails?.socialMediaUsername}`,
     icon: Linkedin,
-  },
-  // {
-  //   name: 'Twitter',
-  //   href: 'https://twitter.com/yourusername',
-  //   icon: Twitter,
-  // },
+  }
 ];
 
 export default function Contact() {
