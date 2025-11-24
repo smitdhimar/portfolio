@@ -32,7 +32,6 @@ export default function Header() {
     setShowToast(()=> true);
     setTimeout(()=> setShowToast(false), 3000)
 
-    // debugger
   }, []);
 
   useEffect(() => {
